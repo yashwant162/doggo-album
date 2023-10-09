@@ -39,7 +39,7 @@ export default function HomePage(){
 
   return (
   <div>  
-        <h2 className="text-2xl"> Home Page {`{${breed}}`}</h2>
+        <h2 className="text-4xl text-gray-400 mb-10 mt-10"> Home Page {`{${breed}}`}</h2>
         <div className="grid md:grid-cols-5 lg:grid-cols-7 sm:grid-cols-3  gap-4">
           {images.map(imageUrl=> (
             <div key={imageUrl} className="relative">
