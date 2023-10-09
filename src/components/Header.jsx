@@ -9,15 +9,15 @@ export default function Header(){
       <header>
         <div className="flex justify-between items-center">
           <div className="">
-            <Link to = {"/"} className=" text-white rounded-2xl p-3 w-full bg-gray-500">
+            <Link to = {"/"} className=" text-gray-300 rounded-2xl p-3 w-full bg-gray-800">
               Doggo
             </Link>
           </div>
           <div className="flex  gap-7">
-            <Link to = {"/list"} className=" text-white rounded-2xl p-3 w-full bg-gray-500">
+            <Link to = {"/list"} className=" text-gray-300 rounded-2xl p-3 w-full bg-gray-800">
               List
             </Link>
-            <Link to = {"/location"} className=" text-white rounded-2xl p-3 w-full bg-gray-500">
+            <Link to = {"/location"} className=" text-gray-300 rounded-2xl p-3 w-full bg-gray-800">
               Track
             </Link>
           </div>

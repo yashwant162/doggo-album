@@ -12,7 +12,7 @@ export default function BreedCarousel() {
           <div
             key={breedName}
             onClick={() => updateBreed(breedName)}
-            className="bg-gray-500 m-4 p-4 rounded-md cursor-pointer text-xl text-white"
+            className="bg-gray-800 m-4 p-4 rounded-md cursor-pointer text-xl text-gray-300"
           >
             <div className="">{breedName}</div>
           </div>

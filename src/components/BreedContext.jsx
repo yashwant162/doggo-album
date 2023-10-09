@@ -20,7 +20,7 @@ export function BreedContextProvider({children}) {
   }, [])
   const updateBreed = (newBreed) => {
     setBreed(newBreed);
-    console.log("breed in context :",breed)
+    console.log("breed in context :",newBreed)
   };
 
   return (
