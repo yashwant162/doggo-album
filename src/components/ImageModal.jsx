@@ -26,12 +26,13 @@ export default function ImageModal({ imageUrl, onClose }) {
       <div className="fixed inset-0 bg-black opacity-50" />
 
       <div className="fixed inset-0 z-50 flex items-center justify-center">
-        <div className=" bg-white p-4 rounded-lg shadow-lg" style={{ transform: `scale(${zoomFactor})` }}>
+        <div className=" bg-gray-700 p-4 rounded-lg shadow-lg" style={{ transform: `scale(${zoomFactor})` }}>
           
           <img
             src={imageUrl}
             alt="Zoomed Image"
-            className="zoomable-image cursor-pointer"
+            className="zoomable-image cursor-pointer rounded-lg"
+            style={{ width: '400px', height: '300px', objectFit: 'cover', }}
             onClick={onclose}
           />
         </div>
