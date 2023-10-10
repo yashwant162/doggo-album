@@ -12,16 +12,16 @@ export default function HomePage() {
       <h2 className="text-4xl text-gray-400 mb-10 mt-10">
         Home Page {`{${breed}}`}
       </h2>
-      <div className="grid md:grid-cols-5 lg:grid-cols-6 sm:grid-cols-3  gap-4">
+      <div className="masonry sm:masonry-sm md:masonry-md">
         {images.map((imageUrl) => (
           <div
             key={imageUrl}
-            className="relative bg-slate-200 px-4 pb-8 pt-2 rounded-md"
+            className="rounded-lg bg-slate-200 px-4 pt-4 pb-12 break-inside mb-2 inline-block"
           >
             <img
               src={imageUrl}
               onClick={() => openModal(imageUrl)}
-              className="w-full h-full object-cover cursor-pointer"
+              className="w-auto h-auto object-contain cursor-pointer"
             />
           </div>
         ))}
