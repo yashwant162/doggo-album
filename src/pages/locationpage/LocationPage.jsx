@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useMemo, useState } from "react";
 import Map, { Marker, Popup } from "react-map-gl";
-import Pin from "../components/common/Pin";
+import Pin from "../../components/common/Pin";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useBreed } from "../context/useBreed";
+import { useBreed } from "../../context/useBreed";
 
 export default function LocationPage(){
   const {breed} = useBreed()

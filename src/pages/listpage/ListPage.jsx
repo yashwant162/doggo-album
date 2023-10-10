@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 
 import axios from "axios"
-import ImageModal from "../components/ImageModal"
-import { useBreed } from "../context/useBreed";
+import ImageModal from "../../components/ImageModal"
+import { useBreed } from "../../context/useBreed";
 import { useEffect, useState } from "react";
 
 export default function ListPage(){

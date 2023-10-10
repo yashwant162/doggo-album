@@ -1,9 +1,9 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Layout from "./components/Layout"
-import HomePage from "./pages/HomePage"
-import ListPage from "./pages/ListPage"
-import LocationPage from "./pages/LocationPage"
+import HomePage from "./pages/homepage/HomePage"
+import ListPage from "./pages/listpage/ListPage"
+import LocationPage from "./pages/locationpage/LocationPage"
 function App() {
 
   return (

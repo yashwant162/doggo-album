@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import ImageModal from "../components/ImageModal"
-import { useBreed } from "../context/useBreed"
+import ImageModal from "../../components/ImageModal"
+import { useBreed } from "../../context/useBreed"
 
 
 export default function HomePage(){
