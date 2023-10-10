@@ -1,13 +1,10 @@
-import { useContext} from "react";
 import useBreedCarousel from "./useBreedCarousel";
-import { BreedContext } from "../BreedContext";
 import { DogIcon1, DogIcon2 } from "../svg/DogIcon";
-
+import { useBreed } from "../../context/useBreed";
 export default function BreedCarousel() {
   const { breedsList} = useBreedCarousel();
-  const { updateBreed} = useContext(BreedContext)
-  let i = 0; 
-
+  const { updateBreed}  = useBreed()
+  let i = 0;
   return (
        <div className="flex flex-row items-center overflow-hidden overflow-x-auto scrollbar-hidden">
         {breedsList.map((breedName) => {

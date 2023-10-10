@@ -22,3 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.gitignore
+src/assets/constants/breedCoordinates.js

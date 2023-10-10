@@ -1,8 +1,7 @@
-import { useContext } from "react"
-import { BreedContext } from "./BreedContext"
+import { useBreed } from "../context/useBreed"
 
 export default function Footer(){
-  const {breed} = useContext(BreedContext)
+  const {breed} = useBreed()
 
   return (
       <div className="w-full">

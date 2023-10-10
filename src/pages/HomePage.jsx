@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from "react"
-import { BreedContext } from "../components/BreedContext"
+import { useEffect, useState } from "react"
 import axios from "axios"
 import ImageModal from "../components/ImageModal"
+import { useBreed } from "../context/useBreed"
 
 
 export default function HomePage(){
 
-  const {breed} = useContext(BreedContext)
+  const {breed} = useBreed()
   const [images, setImages] = useState([])
   const [getImages, setGetImages] = useState(true)
   const [modalOpen, setModalOpen] = useState(false);
@@ -40,9 +40,9 @@ export default function HomePage(){
   return (
   <div>  
         <h2 className="text-4xl text-gray-400 mb-10 mt-10"> Home Page {`{${breed}}`}</h2>
-        <div className="grid md:grid-cols-5 lg:grid-cols-7 sm:grid-cols-3  gap-4">
+        <div className="grid md:grid-cols-5 lg:grid-cols-6 sm:grid-cols-3  gap-4">
           {images.map(imageUrl=> (
-            <div key={imageUrl} className="relative">
+            <div key={imageUrl} className="relative bg-slate-200 px-4 pb-8 pt-2 rounded-md">
               <img src={imageUrl} onClick={() => openModal(imageUrl)} className="w-full h-full object-cover cursor-pointer"/>
             </div>
           ))}
