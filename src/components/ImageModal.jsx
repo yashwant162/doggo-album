@@ -50,7 +50,7 @@ export default function ImageModal({ imageUrl, onClose }) {
               >
                 -
               </button>
-              <button className="bg-gray-500 text-white px-4 py-2 rounded-lg top-0 right-0 cursor-pointer" onClick={onClose}>
+              <button className="bg-gray-500 text-white px-4 py-2 rounded-lg top-0 right-0 cursor-pointer" onClick={closeModal}>
                  X
               </button>
             </div>
