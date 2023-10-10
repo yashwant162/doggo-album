@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useMemo, useState } from "react";
 import Map, { Marker, Popup } from "react-map-gl";
-import Pin from "../../components/common/Pin";
+import Pin from "../../components/svg/Pin";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useBreed } from "../../context/useBreed";
-
+import { MAPBOX_AUTH_TOKEN as TOKEN } from "../../constants/constants";
 export default function LocationPage(){
   const {breed} = useBreed()
   const [popupInfo, setPopupInfo] = useState(null);
@@ -38,8 +38,6 @@ export default function LocationPage(){
   
     return coordinatesArray;
   }
-
-  const TOKEN ='pk.eyJ1IjoieWFzaGgxNiIsImEiOiJjbG5qNnNsN2wxbTdhMmxybDJicjJ1cmEwIn0.oiWMVHcs-fQ8pxN0QkxCXA';
 
   const markers = coordinates.map((mark, index) => (
     <Marker
