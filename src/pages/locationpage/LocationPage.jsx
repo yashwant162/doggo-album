@@ -16,6 +16,10 @@ export default function LocationPage(){
     console.log("coordinates: ",breedCoordinates)
   },[breed])
 
+  function getRandomCoordinate(min, max) {
+    return (Math.random() * (max - min) + min).toFixed(6);
+  }
+
   function getRandomCoordinates() {
     const minLatitude = 19.4;
     const maxLatitude = 27.6;
@@ -27,8 +31,8 @@ export default function LocationPage(){
     const coordinatesArray = [];
   
     for (let i = 0; i < arraySize; i++) {
-      const latitude = (Math.random() * (maxLatitude - minLatitude) + minLatitude).toFixed(6);
-      const longitude = (Math.random() * (maxLongitude - minLongitude) + minLongitude).toFixed(6);
+      const latitude = getRandomCoordinate(minLatitude, maxLatitude)
+      const longitude = getRandomCoordinate(minLongitude, maxLongitude)
   
       coordinatesArray.push({
         latitude,
