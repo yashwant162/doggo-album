@@ -31,8 +31,8 @@ export default function ImageModal({ imageUrl, onClose }) {
           <img
             src={imageUrl}
             alt="Zoomed Image"
-            className="zoomable-image cursor-pointer rounded-lg"
-            style={{ width: '400px', height: '300px', objectFit: 'cover', }}
+            className="zoomable-image cursor-pointer rounded-lg w-full h-full object-contain "
+            style={{maxWidth: '60vw',maxHeight: '60vh',}}
             onClick={onclose}
           />
         </div>
