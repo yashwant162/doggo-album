@@ -47,7 +47,9 @@ export default function LocationPage(){
       latitude={mark.latitude}
       longitude={mark.longitude}
     >
-      <Pin onClick={() => {setPopupInfo(coordinates)}}/>
+     <div onClick={() => {setPopupInfo(mark)}}>
+      <Pin />
+      </div> 
     </Marker>
   ));
     
@@ -60,19 +62,25 @@ export default function LocationPage(){
       mapStyle="mapbox://styles/mapbox/streets-v9"
       mapboxAccessToken={TOKEN}>
         {markers}
-
-        {popupInfo && (
-          <Popup
-            anchor="top"
-            longitude={Number(popupInfo.mapData.longitude)}
-            latitude={Number(popupInfo.mapData.latitude)}
-            onClose={() => setPopupInfo(null)}
-          >
-            <div>
-              Listing Details
-            </div>
-          </Popup>
-        )}s
+        {console.log("popup",popupInfo)}
+        {popupInfo  && (
+  
+            <Popup
+              anchor="top"
+              longitude={Number(popupInfo.longitude)}
+              latitude={Number(popupInfo.latitude)}
+              onClose={() => setPopupInfo(null)}
+              closeOnClick={false}
+              style={{}}
+            >
+              <div className="flex-row">
+                <div><span className="font-bold">Breed:</span>{breed}</div>
+                <div><span className="font-bold">Latitude:</span> {popupInfo.latitude}<br/></div>
+                <div><span className="font-bold">Longitude:</span> {popupInfo.longitude}</div>
+              </div>
+            </Popup>
+      
+        )}
       </Map>
     </div>
   );
