@@ -12,12 +12,12 @@ export default function ImageModal({ imageUrl, onClose }) {
   };
 
   const zoomIn = () => {
-    setZoomFactor((prevZoom) => prevZoom + 0.2); // Increase zoom by 20%
+    setZoomFactor((prevZoom) => prevZoom + 0.2); 
   };
 
   const zoomOut = () => {
     if (zoomFactor > 0.5) {
-      setZoomFactor((prevZoom) => prevZoom - 0.2); // Decrease zoom by 20%, but not below 100%
+      setZoomFactor((prevZoom) => prevZoom - 0.2); 
     }
   };
 

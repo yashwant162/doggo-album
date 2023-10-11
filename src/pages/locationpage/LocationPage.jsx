@@ -19,7 +19,6 @@ export default function LocationPage() {
         mapboxAccessToken={TOKEN}
       >
         {markers}
-        {console.log("popup", popupInfo)}
         {popupInfo && (
           <Popup
             anchor="top"

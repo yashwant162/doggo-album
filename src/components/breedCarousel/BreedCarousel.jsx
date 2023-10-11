@@ -9,7 +9,7 @@ export default function BreedCarousel() {
     <div className="flex flex-row items-center overflow-hidden overflow-x-auto scrollbar-hidden">
       {breedsList.map((breedName) => {
         const displayIcon = i % 2 === 0 ? <DogIcon1 /> : <DogIcon2 />;
-        i++; // Increment i for the next iteration
+        i++;
         return (
           <div
             key={breedName}
