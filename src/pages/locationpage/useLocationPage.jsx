@@ -5,13 +5,13 @@ import { Marker } from "react-map-gl";
 
 export function useLocationPage(breed) {
   const [popupInfo, setPopupInfo] = useState(null);
-  const [coordinates,setCoordinates] = useState([])
-  
+  const [coordinates, setCoordinates] = useState([]);
+
   useEffect(() => {
-    const breedCoordinates = getRandomCoordinates()
-    setCoordinates(breedCoordinates)
-    console.log("coordinates: ",breedCoordinates)
-  },[breed])
+    const breedCoordinates = getRandomCoordinates();
+    setCoordinates(breedCoordinates);
+    console.log("coordinates: ", breedCoordinates);
+  }, [breed]);
 
   function getRandomCoordinate(min, max) {
     return (Math.random() * (max - min) + min).toFixed(6);
@@ -22,35 +22,34 @@ export function useLocationPage(breed) {
     const maxLatitude = 27.6;
     const minLongitude = 74.7;
     const maxLongitude = 81.4;
-  
+
     const arraySize = Math.floor(Math.random() * 6) + 3;
-  
+
     const coordinatesArray = [];
-  
+
     for (let i = 0; i < arraySize; i++) {
-      const latitude = getRandomCoordinate(minLatitude, maxLatitude)
-      const longitude = getRandomCoordinate(minLongitude, maxLongitude)
-  
+      const latitude = getRandomCoordinate(minLatitude, maxLatitude);
+      const longitude = getRandomCoordinate(minLongitude, maxLongitude);
+
       coordinatesArray.push({
         latitude,
         longitude,
       });
     }
-  
+
     return coordinatesArray;
   }
 
   const markers = coordinates.map((mark, index) => (
-    <Marker
-      key={index}
-      latitude={mark.latitude}
-      longitude={mark.longitude}
-    >
-     <div onClick={() => {setPopupInfo(mark)}}>
-      <Pin />
-      </div> 
+    <Marker key={index} latitude={mark.latitude} longitude={mark.longitude}>
+      <div
+        onClick={() => {
+          setPopupInfo(mark);
+        }}
+      >
+        <Pin />
+      </div>
     </Marker>
   ));
-  return {markers, popupInfo, setPopupInfo};
+  return { markers, popupInfo, setPopupInfo };
 }
-
