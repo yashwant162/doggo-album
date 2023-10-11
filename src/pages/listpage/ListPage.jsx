@@ -14,11 +14,13 @@ export default function ListPage() {
   } = useListPage(breed);
 
   return (
-    <div className="flex flex-col items-center justify-center mt-10 font-bold underline mb-10 text-xl">
-      <div>{breed} Sub-Breeds</div>
+    <div className="flex flex-col items-center justify-center mt-4 font-bold underline mb-10 text-xl text-slate-200">
+      <div className="text-start w-full pb-2">{breed.charAt(0).toUpperCase() + breed.slice(1)} Sub-Breeds</div>
 
       {loading ? (
-        <div>Loading...</div>
+        <div className="flex justify-center items-center">
+        <div className="animate-spin rounded-full border-t-4 border-slate-200 border-opacity-75 h-20 w-20"></div>
+      </div>
       ) : (
         <div className="relative overflow-x-auto w-full">
           <table className="w-full text-sm text-left text-gray-400 rounded-2xl overflow-hidden">

@@ -22,7 +22,10 @@ function useListPage(breed) {
 
       const images = await Promise.all(imageRequests);
       setSubBreeds(images);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+
     } catch (error) {
       console.error("Error fetching data:", error);
     }
