@@ -1,4 +1,5 @@
 import ImageModal from "../../components/ImageModal";
+import LoadingSpinner from "../../components/LoadingSpinner";
 import { useBreed } from "../../context/useBreed";
 import { useHomePage } from "./useHomePage";
 
@@ -13,9 +14,7 @@ export default function HomePage() {
         Breed: {`${breed.charAt(0).toUpperCase() + breed.slice(1)}`}
       </h2>
       {loading ? (
-        <div className="flex justify-center items-center">
-          <div className="animate-spin rounded-full border-t-4 border-slate-200 border-opacity-75 h-20 w-20"></div>
-        </div>
+        <LoadingSpinner />
       ) : (
         <div className="gap-x-6 lg:columns-5 sm:columns-1 md:columns-3">
           {images.map((imageUrl) => (
