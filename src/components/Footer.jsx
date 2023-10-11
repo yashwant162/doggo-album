@@ -11,7 +11,7 @@ export default function Footer(){
            <div>
               <span className="font-bold mr-4">DOGGO</span>
               <span className="mr-1">Looks like you love</span>
-               <span className="underline font-bold">{breed}</span>
+               <span className="underline font-bold">{breed.charAt(0).toUpperCase() + breed.slice(1)}</span>
            </div>
         </footer>
       </div>
