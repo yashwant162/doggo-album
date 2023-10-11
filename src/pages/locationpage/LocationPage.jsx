@@ -10,7 +10,7 @@ export default function LocationPage(){
     
   return (
     <div
-      className="h-[72.5vh] max-w-[100vw] pt-2"
+      className="h-[72.5vh] max-w-[100vw] border-8 border-slate-400 mt-2 rounded-md"
     >
       <Map 
       initialViewState={{longitude: 80.630,latitude: 20.968,zoom: 3.8,}}
