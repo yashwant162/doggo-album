@@ -1,5 +1,5 @@
-import ImageModal from "../../components/ImageModal";
-import LoadingSpinner from "../../components/LoadingSpinner";
+import ImageModal from "../../components/common/ImageModal";
+import LoadingSpinner from "../../components/common/LoadingSpinner";
 import { useBreed } from "../../context/useBreed";
 import { useHomePage } from "./useHomePage";
 

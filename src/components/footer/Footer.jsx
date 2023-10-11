@@ -1,4 +1,4 @@
-import { useBreed } from "../context/useBreed";
+import { useBreed } from "../../context/useBreed";
 
 export default function Footer() {
   const { breed } = useBreed();
