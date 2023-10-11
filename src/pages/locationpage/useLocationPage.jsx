@@ -8,9 +8,17 @@ export function useLocationPage(breed) {
   const [coordinates, setCoordinates] = useState([]);
 
   useEffect(() => {
-    const breedCoordinates = getRandomCoordinates();
-    setCoordinates(breedCoordinates);
-    console.log("coordinates: ", breedCoordinates);
+    const storedCoordinates = sessionStorage.getItem(`${breed.toString()}-coordinates`)
+
+    if (storedCoordinates) {
+      setCoordinates(JSON.parse(storedCoordinates));
+    } else {
+      const breedCoordinates = getRandomCoordinates();
+      setCoordinates(breedCoordinates);
+      sessionStorage.setItem(`${breed.toString()}-coordinates`,JSON.stringify(breedCoordinates))
+      console.log("coordinates: ", breedCoordinates);
+    }
+
   }, [breed]);
 
   function getRandomCoordinate(min, max) {

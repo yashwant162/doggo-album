@@ -8,11 +8,20 @@ function useListPage(breed) {
   const [modalOpen, setModalOpen] = useState(false);
 
   async function getAllSubBreeds(breed) {
+    const storedSubBreeds = sessionStorage.getItem(`${breed.toString()}-subBreed`)
+    let subBreedsData
     try {
-      const response = await axios.get(
-        `https://dog.ceo/api/breed/${breed}/list`
-      );
-      const subBreedsData = response.data.message;
+      if (storedSubBreeds) {
+         subBreedsData = JSON.parse(storedSubBreeds)
+         console.log("in session subbreed",subBreedsData);
+      }
+      else {
+        const response = await axios.get(
+          `https://dog.ceo/api/breed/${breed}/list`
+        );
+        subBreedsData = response.data.message;
+        sessionStorage.setItem(`${breed.toString()}-subBreed`,JSON.stringify(subBreedsData))
+      }
       const imageRequests = subBreedsData.map(async (subBreed) => {
         const response = await axios.get(
           `https://dog.ceo/api/breed/${breed}/${subBreed}/images/random`
@@ -22,9 +31,7 @@ function useListPage(breed) {
 
       const images = await Promise.all(imageRequests);
       setSubBreeds(images);
-      setTimeout(() => {
-        setLoading(false);
-      }, 2000);
+      setLoading(false);
 
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -32,7 +39,7 @@ function useListPage(breed) {
   }
 
   useEffect(() => {
-    setLoading(true); // Show loading indicator while fetching data
+    setLoading(true);
     getAllSubBreeds(breed);
   }, [breed]);
 
